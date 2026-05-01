@@ -8,14 +8,14 @@ import {
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
 
-const searchForm = document.querySelector('.search-form');
+const searchForm = document.querySelector('.form');
 
 searchForm.addEventListener('submit', handleSearch);
 
 async function handleSearch(event) {
   event.preventDefault();
 
-  const query = event.currentTarget.elements.query.value.trim();
+  const query = event.currentTarget.elements['search-text'].value.trim();
 
   if (!query) {
     iziToast.warning({ message: 'Please enter a search query!' });
